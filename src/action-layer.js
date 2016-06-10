@@ -4,6 +4,7 @@ var ActionLayer = cc.Layer.extend({
   _body:null,
   _shape:null,
   _isTouch:false,
+  _delta:0,
 
   ctor:function(space) {
     this._super();
@@ -58,14 +59,18 @@ var ActionLayer = cc.Layer.extend({
        var position = this._player.getPosition();
        var newPosition = cc.pAdd(position,delta);
 
-
+       cc.log("moving delta = ",delta.x,delta.y);
        this._player.setPosition(cc.pClamp(newPosition, cc.p(0, 0), cc.p(winSize.width, winSize.height)));
+       this._delta = delta;
 
      }.bind(this),
      onTouchEnded: function(touch,event)
      {
-       var delta = touch.getDelta();
-       this._player.body.applyImpulse(delta,cp.v(0, 0));
+    	 if(this._isTouch == false)
+    		 return false;
+    	 this._player.body.applyImpulse(this._delta,cp.v(0, 0));
+    	 this._delta = cp.v(0, 0);
+    	 this._isTouch = false;
      }.bind(this),
      onTouchCancelled:function(touch,event)
      {
