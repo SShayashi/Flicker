@@ -38,7 +38,7 @@ var ActionLayer = cc.Layer.extend({
         if (isHit) {
           this._isTouch = true;
           this._player.body.setVel(cc.p(0,0));
-          cc.log(this._player.body);
+//          cc.log(this._player.body);
         }else{
           this._isTouch = false;
         }
@@ -53,13 +53,13 @@ var ActionLayer = cc.Layer.extend({
         if(this._isTouch == false)
           return false;
         //タッチ中に動いた時の処理
-        cc.log("touch at (%f, %f)", touch.getLocationX(), touch.getLocationY());
+//        cc.log("touch at (%f, %f)", touch.getLocationX(), touch.getLocationY());
        var winSize = director.getWinSize();
        var delta = touch.getDelta();
        var position = this._player.getPosition();
        var newPosition = cc.pAdd(position,delta);
 
-       cc.log("moving delta = ",delta.x,delta.y);
+//       cc.log("moving delta = ",delta.x,delta.y);
        this._player.setPosition(cc.pClamp(newPosition, cc.p(0, 0), cc.p(winSize.width, winSize.height)));
        this._delta = delta;
 
