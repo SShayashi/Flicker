@@ -1,5 +1,7 @@
 var Player = cc.PhysicsSprite.extend({
   space:null,
+  _oldPosition:cc.p(100,100),
+  _movingDistance:0,
   ctor:function(space) {
     this._super();
     this.space = space;
@@ -24,5 +26,18 @@ var Player = cc.PhysicsSprite.extend({
     this.shape.setFriction(1);
     this.space.addShape(this.shape);
     this.setBody(this.body);
+  },
+  playerUpdate:function(){
+//	  var distance = this._oldPosition.getDistance(this.getPosition());
+	  var distance = cc.pDistanceSQ(this._oldPosition,this.getPosition());
+	  this._movingDistance += distance;
+	  cc.log(this._movingDistance);
+	  while(this._movingDistance > 100 )
+	  {
+		  this._movingDistance -=100;
+		  //コインが出る処理
+	  }
+	  
+	  this._oldPosition =  this.getPosition();
   }
 });

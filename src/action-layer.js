@@ -84,6 +84,7 @@ var ActionLayer = cc.Layer.extend({
     var position = this._player.getPosition();
     var winSize = cc.director.getWinSize();
     this._player.setPosition(cc.pClamp(position, cc.p(0, 0), cc.p(winSize.width, winSize.height )));
+    this._player.playerUpdate();
   },
   onEnter:function () {
      // onEnter の中では必ず this._super() を呼ばなくてはならない．
