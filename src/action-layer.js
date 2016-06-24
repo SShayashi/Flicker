@@ -8,7 +8,7 @@ var ActionLayer = cc.Layer.extend({
 
   ctor:function(space) {
     this._super();
-    this.space = space;
+    this._space = space;
     this.init();
   },
 
@@ -22,9 +22,11 @@ var ActionLayer = cc.Layer.extend({
     background.setPosition( cc.p(winSize.width / 2, winSize.height / 2));
     this.addChild(background);
     //playerの設置
-    this._player = new Player(this.space);
+    this._player = new Player(this._space);
     this.addChild(this._player);
 
+    this.scheduleUpdate(); // 周期処理を開始
+   
     //コールバック関数はbindでthisを束縛する必要がある
     cc.eventManager.addListener({
       event: cc.EventListener.TOUCH_ONE_BY_ONE,
@@ -38,7 +40,6 @@ var ActionLayer = cc.Layer.extend({
         if (isHit) {
           this._isTouch = true;
           this._player.body.setVel(cc.p(0,0));
-//          cc.log(this._player.body);
         }else{
           this._isTouch = false;
         }
@@ -53,13 +54,10 @@ var ActionLayer = cc.Layer.extend({
         if(this._isTouch == false)
           return false;
         //タッチ中に動いた時の処理
-//        cc.log("touch at (%f, %f)", touch.getLocationX(), touch.getLocationY());
        var winSize = director.getWinSize();
        var delta = touch.getDelta();
        var position = this._player.getPosition();
        var newPosition = cc.pAdd(position,delta);
-
-//       cc.log("moving delta = ",delta.x,delta.y);
        this._player.setPosition(cc.pClamp(newPosition, cc.p(0, 0), cc.p(winSize.width, winSize.height)));
        this._delta = delta;
 
