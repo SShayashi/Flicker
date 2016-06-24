@@ -18,6 +18,7 @@ var MainScene = cc.Scene.extend({
       var shape = walls[i];
       shape.setElasticity(1);
       shape.setFriction(0);
+      shape.setCollisionType(collision.WALL);
       this.space.addStaticShape(shape);
     }
     this.space.gravity = cp.v(0, 0); // 下方向に重力を設定する

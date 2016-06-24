@@ -25,20 +25,21 @@ var Player = cc.PhysicsSprite.extend({
     this.shape = new cp.CircleShape(this.body, contentSize.width / 3,cp.v(0, 0));
     this.shape.setElasticity(1);
     this.shape.setFriction(1);
+    this.shape.setCollisionType(collision.PLAYER);
     this.space.addShape(this.shape);
     this.setBody(this.body);
   },
   playerUpdate:function(){
-//	  var distance = this._oldPosition.getDistance(this.getPosition());
 	  var distance = cc.pDistanceSQ(this._oldPosition,this.getPosition());
 	  this._movingDistance += distance;
-	  cc.log(this._movingDistance);
 	  while(this._movingDistance > 100 )
 	  {
 		  this._movingDistance -=100;
 		  //コインが出る処理
 	  }
-	  
 	  this._oldPosition =  this.getPosition();
+	  
+	  
+	  
   }
 });
