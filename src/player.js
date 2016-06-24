@@ -19,6 +19,7 @@ var Player = cc.PhysicsSprite.extend({
     // init body
     this.body = new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));
     this.body.p = cc.p(100, 100);
+    this.body.v_limit = 5000;
     this.space.addBody(this.body);
 
     this.shape = new cp.CircleShape(this.body, contentSize.width / 3,cp.v(0, 0));
