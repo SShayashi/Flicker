@@ -15,3 +15,5 @@ var collision = {
 		PLAYER:1,
 		OBJE:2
 };
+
+var PI = 3.141592653589793;
