@@ -79,14 +79,22 @@ var ActionLayer = cc.Layer.extend({
     this._space.addCollisionHandler( // 衝突イベントを設定
     		collision.WALL, collision.PLAYER,//playerと壁の衝突を検知
     		function(arbiter, space){ //接触処理
-    			//TODO エフェクトの表示
-    			model.add(model_int.forse,1);
-    			cc.log(model.get(model_int.forse));
     			var shapes = arbiter.getShapes(); // 衝突したShapeの配列を取得
     			var shape = shapes[1]; // Shapeを取得（配列の順序は、引数で衝突タイプを指定した順序です。）
     			if (shape.collision_type == 1) {
     				var body = shape.getBody(); // ShapeからBodyを取得
     			}
+    			//値の保存
+    			model.add(model_int.forse,1);
+    			cc.log(model.get(model_int.forse));
+
+    			//エフェクトの表示
+    			var star = new cc.ParticleSystem(res.crash_star);
+    			star.setScale(0.5);
+    			star.setAutoRemoveOnFinish(true);
+    			star.setPosition(body.p);
+    			this.addChild(star)
+
     			return true;
     		}.bind(this),  // レイヤーのthisを使えるようにする
     		null, // preSolve
