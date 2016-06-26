@@ -12,6 +12,7 @@
 
     "jsList" : [
         "src/resource.js",
+        "src/param.js",
         "src/model.js",
         "src/main-scene.js",
         "src/player.js",

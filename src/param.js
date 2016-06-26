@@ -1,0 +1,2 @@
+//ゲームパラメータ
+var PLAYER_APPLY_IMPULSE_RATE = 100;
