@@ -4,7 +4,7 @@ var ActionLayer = cc.Layer.extend({
   _body:null,
   _shape:null,
   _isTouch:false,
-  _delta:0,
+  _delta:null,
 
   ctor:function(space) {
     this._super();
@@ -26,7 +26,7 @@ var ActionLayer = cc.Layer.extend({
     this.addChild(this._player);
 
     this.scheduleUpdate(); // 周期処理を開始
-   
+
     //コールバック関数はbindでthisを束縛する必要がある
     cc.eventManager.addListener({
       event: cc.EventListener.TOUCH_ONE_BY_ONE,
@@ -55,11 +55,11 @@ var ActionLayer = cc.Layer.extend({
           return false;
         //タッチ中に動いた時の処理
        var winSize = director.getWinSize();
-       var delta = touch.getDelta();
+       var delta = cc.p(touch.getDelta().x,touch.getDelta().y);
        var position = this._player.getPosition();
        var newPosition = cc.pAdd(position,delta);
        this._player.setPosition(cc.pClamp(newPosition, cc.p(0, 0), cc.p(winSize.width, winSize.height)));
-       this._delta = delta;
+       this._delta = cc.pMult(delta,PLAYER_APPLY_IMPULSE_RATE);
 
      }.bind(this),
      onTouchEnded: function(touch,event)
@@ -75,7 +75,7 @@ var ActionLayer = cc.Layer.extend({
        this._isTouch = false;
      }.bind(this),
     },this);
-    
+
     this._space.addCollisionHandler( // 衝突イベントを設定
     		collision.WALL, collision.PLAYER,//playerと壁の衝突を検知
     		function(arbiter, space){ //接触処理
@@ -102,7 +102,7 @@ var ActionLayer = cc.Layer.extend({
     		null, // postSolve
     		null); // separate
   },
-  
+
     // /** @override */
   actionUpdate: function() {
     var position = this._player.getPosition();
