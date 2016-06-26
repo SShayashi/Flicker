@@ -84,9 +84,10 @@ var ActionLayer = cc.Layer.extend({
     			if (shape.collision_type == 1) {
     				var body = shape.getBody(); // ShapeからBodyを取得
     			}
+    			model = Model.getInstance();
     			//値の保存
-    			model.add(model_int.forse,1);
-    			cc.log(model.get(model_int.forse));
+    			model.add(model_keys.forse,1);
+    			cc.log(model.get(model_keys.forse));
 
     			//エフェクトの表示
     			var star = new cc.ParticleSystem(res.crash_star);
