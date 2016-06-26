@@ -144,20 +144,21 @@ project.properties
 
 !Resources/model/*.obj
 *.keystore
+*.sqlite
 
 *.swp
 *~.nib
- 
+
 build/
-  
+
   # Xcode project files except for the project file
   # #*.xcodeproj/*
-  # #!*.xcodeproj/project.pbxproj 
+  # #!*.xcodeproj/project.pbxproj
 *.pbxuser
 *.perspective
-*.perspectivev3   
+*.perspectivev3
   #   #!xcuserdata/
   #   #*.xcuserstate
-UserInterfaceState.xcuserstate    
+UserInterfaceState.xcuserstate
   #    # Windows image thumbnail file
  Thumbs.db
