@@ -1,5 +1,6 @@
 var Player = cc.PhysicsSprite.extend({
   space:null,
+  _accelerationRate:0.9,
   _oldPosition:cc.p(100,100),
   _movingDistance:0,
   _direction:5,
@@ -35,12 +36,12 @@ var Player = cc.PhysicsSprite.extend({
 	  var radian = cc.pToAngle( cc.pSub(this._oldPosition ,this.getPosition()));
 	  var degree = radian * 180.0 / PI + 180.0;
 	  var direction = this.get8Way(degree);
-	  
+
 	  if( this._direction != direction){
 		  this._direction = direction;
 		  cc.log(this._direction);
 	  }
-	  
+
 	  this._movingDistance += distance;
 	  while(this._movingDistance > 100 )
 	  {
@@ -48,6 +49,11 @@ var Player = cc.PhysicsSprite.extend({
 		  //コインが出る処理
 	  }
 	  this._oldPosition =  this.getPosition();
+	  cc.log("",this.body.getVel().x,this.body.getVel().y);
+    var v = this.body.getVel();
+    v.x = v.x * this._accelerationRate;
+    v.y = v.y * this._accelerationRate;
+    this.body.setVel(v);
   },
   /**
    * 角度から方向の向きを以下の数字で表現
