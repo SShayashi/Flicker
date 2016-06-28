@@ -87,8 +87,9 @@ var ActionLayer = cc.Layer.extend({
     			model = Model.getInstance();
     			//値の保存
     			model.add(model_keys.forse,1);
+          model.add(model_keys.shake_count,1);
     			cc.log(model.get(model_keys.forse));
-
+          cc.log(model.get(model_keys.shake_count));
     			//エフェクトの表示
     			var star = new cc.ParticleSystem(res.crash_star);
     			star.setScale(0.5);

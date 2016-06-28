@@ -32,28 +32,40 @@ var Player = cc.PhysicsSprite.extend({
     this.setBody(this.body);
   },
   playerUpdate:function(){
-	  var distance = cc.pDistanceSQ(this._oldPosition,this.getPosition());
-	  var radian = cc.pToAngle( cc.pSub(this._oldPosition ,this.getPosition()));
-	  var degree = radian * 180.0 / PI + 180.0;
-	  var direction = this.get8Way(degree);
-
+    var old_pos = this._oldPosition;
+    var now_pos = this.getPosition();
+	  var distanceDelta = cc.pDistanceSQ(old_pos,now_pos);
+    var direction = this.getDirection(distanceDelta);
+    cc.log(direction);
 	  if( this._direction != direction){
 		  this._direction = direction;
-		  cc.log(this._direction);
+		  //シェイクポイントを貯める
+		  model = Model.getInstance();
+		  model.add(model_keys.shake_count,1);
+		  // cc.log(model.get(model_keys.shake_count));
 	  }
 
-	  this._movingDistance += distance;
+	  this._movingDistance += distanceDelta;
 	  while(this._movingDistance > 100 )
 	  {
 		  this._movingDistance -=100;
 		  //コインが出る処理
 	  }
 	  this._oldPosition =  this.getPosition();
-	  cc.log("",this.body.getVel().x,this.body.getVel().y);
+
     var v = this.body.getVel();
     v.x = v.x * this._accelerationRate;
     v.y = v.y * this._accelerationRate;
     this.body.setVel(v);
+  },
+  getDirection:function(distanceDelta){
+    //動きが無い場合は前の方向を返す．
+    if(distanceDelta == 0)
+      return this._direction;
+	  var radian = cc.pToAngle( cc.pSub(this._oldPosition ,this.getPosition()));
+	  var degree = radian * 180.0 / PI + 180.0;
+	  var direction = this.get8Way(degree);
+    return direction;
   },
   /**
    * 角度から方向の向きを以下の数字で表現
