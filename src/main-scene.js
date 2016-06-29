@@ -1,6 +1,8 @@
 var MainScene = cc.Scene.extend({
   space:null,
   actionlayer:null,
+  statuslayer:null,
+  model:null,
   //chipmunkの物理空間の初期化
   initPhysics: function () {
   this.space = new cp.Space();
@@ -32,6 +34,11 @@ var MainScene = cc.Scene.extend({
   update: function(dt) {
     this.space && this.space.step(dt);
     this.actionlayer.actionUpdate();
+    this.statuslayer.statusUpdate(this.model);
+  },
+
+  init:function(){
+    this.model = Model.getInstance();
   },
 
   onEnter:function () {
@@ -39,8 +46,11 @@ var MainScene = cc.Scene.extend({
        // onEnter の中では必ず this._super() を呼ばなくてはならない．
        this._super();
        this.initPhysics();
+       this.init();
        //書くレイヤーを読み込む
        this.actionlayer = new ActionLayer(this.space);
+       this.statuslayer = new StatusLayer();
+       this.addChild(this.statuslayer,1000);
        this.addChild(this.actionlayer);
 
        this.scheduleUpdate();
