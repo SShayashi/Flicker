@@ -2,7 +2,7 @@ var model_keys = {
 		shake_count:"shake_count",
 		max_forse:"max_forse",
 		forse:"forse",
-		money:"money",
+		coin:"coin",
 		point:"point"
 }
 
@@ -12,7 +12,6 @@ var Model = (function(){
 	//keys
 	//初期化処理
 	function init(){
-		var randNumber = Math.random();
 
 		//数値を扱うものは0で初期化する
 		for ( var key in model_keys) {
@@ -21,9 +20,6 @@ var Model = (function(){
 		}
 
 		return {
-				getRandomNumber:function(){
-					return randNumber;
-				},
 				set:function(key,value){
 					cc.sys.localStorage.setItem(key,new_value);
 				},

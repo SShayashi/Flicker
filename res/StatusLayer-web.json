@@ -1,7 +1,7 @@
 {
-  "ID": "7613cd18-8460-4b51-91d8-8c8f4704bb62",
+  "ID": "f37d501c-7496-45f4-913d-ed02596bd87f",
   "Version": "2.3.3.0",
-  "Name": "StatusLayer",
+  "Name": "StatusLayer-web",
   "Content": {
     "Content": {
       "Animation": {
@@ -12,8 +12,155 @@
       },
       "AnimationList": [],
       "ObjectData": {
-        "Tag": 10,
+        "Tag": 6,
         "Children": [
+          {
+            "FontSize": 20,
+            "LabelText": "降った回数",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 69.6901,
+              "Y": 161.1192
+            },
+            "Scale": {
+              "ScaleX": 1.1613,
+              "ScaleY": 1.6741
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2178,
+              "Y": 0.3357
+            },
+            "PreSize": {
+              "X": 0.3125,
+              "Y": 0.0479
+            },
+            "LeftMargin": 19.6901,
+            "RightMargin": 200.3099,
+            "TopMargin": 307.3808,
+            "BottomMargin": 149.6192,
+            "Tag": 7,
+            "ActionTag": -1456022323,
+            "Size": {
+              "X": 100.0,
+              "Y": 23.0
+            },
+            "Name": "shake_count",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "コイン",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 48.5585,
+              "Y": 210.1797
+            },
+            "Scale": {
+              "ScaleX": 1.3011,
+              "ScaleY": 1.8079
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1517,
+              "Y": 0.4379
+            },
+            "PreSize": {
+              "X": 0.1875,
+              "Y": 0.0479
+            },
+            "LeftMargin": 18.5585,
+            "RightMargin": 241.4415,
+            "TopMargin": 258.3203,
+            "BottomMargin": 198.6797,
+            "Tag": 8,
+            "ActionTag": 1332469664,
+            "Size": {
+              "X": 60.0,
+              "Y": 23.0
+            },
+            "Name": "coin",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "最高記録",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 53.8884,
+              "Y": 107.4994
+            },
+            "Scale": {
+              "ScaleX": 1.0454,
+              "ScaleY": 1.6046
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1684,
+              "Y": 0.224
+            },
+            "PreSize": {
+              "X": 0.25,
+              "Y": 0.0479
+            },
+            "LeftMargin": 13.8884,
+            "RightMargin": 226.1116,
+            "TopMargin": 361.0006,
+            "BottomMargin": 95.9994,
+            "Tag": 9,
+            "ActionTag": -280246870,
+            "Size": {
+              "X": 80.0,
+              "Y": 23.0
+            },
+            "Name": "shake_count_max",
+            "ctype": "TextObjectData"
+          },
           {
             "FontSize": 11,
             "ButtonText": "OPEN",
@@ -59,187 +206,40 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 119.9473,
-              "Y": 883.8494
+              "X": 51.2385,
+              "Y": 435.8683
             },
             "Scale": {
-              "ScaleX": 4.1496,
-              "ScaleY": 2.4879
+              "ScaleX": 1.9987,
+              "ScaleY": 1.7245
             },
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.1874,
-              "Y": 0.9207
+              "X": 0.1601,
+              "Y": 0.9081
             },
             "PreSize": {
-              "X": 0.0719,
-              "Y": 0.0375
+              "X": 0.1437,
+              "Y": 0.075
             },
-            "LeftMargin": 96.9473,
-            "RightMargin": 497.0527,
-            "TopMargin": 58.1506,
-            "BottomMargin": 865.8494,
-            "Tag": 17,
-            "ActionTag": 1779692365,
+            "LeftMargin": 28.2385,
+            "RightMargin": 245.7615,
+            "TopMargin": 26.1317,
+            "BottomMargin": 417.8683,
+            "Tag": 10,
+            "ActionTag": -1646694475,
             "Size": {
               "X": 46.0,
               "Y": 36.0
             },
             "Name": "open",
             "ctype": "ButtonObjectData"
-          },
-          {
-            "FontSize": 20,
-            "LabelText": "最高記録",
-            "OutlineColor": {
-              "G": 0,
-              "B": 0
-            },
-            "ShadowColor": {
-              "R": 110,
-              "G": 110,
-              "B": 110
-            },
-            "ShadowOffsetX": 2.0,
-            "ShadowOffsetY": -2.0,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 117.0194,
-              "Y": 120.2858
-            },
-            "Scale": {
-              "ScaleX": 2.5837,
-              "ScaleY": 3.4808
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.1828,
-              "Y": 0.1253
-            },
-            "PreSize": {
-              "X": 0.125,
-              "Y": 0.024
-            },
-            "LeftMargin": 77.0194,
-            "RightMargin": 482.9806,
-            "TopMargin": 828.2142,
-            "BottomMargin": 108.7858,
-            "Tag": 18,
-            "ActionTag": 2040886846,
-            "Size": {
-              "X": 80.0,
-              "Y": 23.0
-            },
-            "Name": "shake_count_max",
-            "ctype": "TextObjectData"
-          },
-          {
-            "FontSize": 20,
-            "LabelText": "コイン",
-            "OutlineColor": {
-              "G": 0,
-              "B": 0
-            },
-            "ShadowColor": {
-              "R": 110,
-              "G": 110,
-              "B": 110
-            },
-            "ShadowOffsetX": 2.0,
-            "ShadowOffsetY": -2.0,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 94.1088,
-              "Y": 299.6824
-            },
-            "Scale": {
-              "ScaleX": 2.5837,
-              "ScaleY": 3.4808
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.147,
-              "Y": 0.3122
-            },
-            "PreSize": {
-              "X": 0.0938,
-              "Y": 0.024
-            },
-            "LeftMargin": 64.1088,
-            "RightMargin": 515.8912,
-            "TopMargin": 648.8176,
-            "BottomMargin": 288.1824,
-            "Tag": 19,
-            "ActionTag": 1710143079,
-            "Size": {
-              "X": 60.0,
-              "Y": 23.0
-            },
-            "Name": "coin_point",
-            "ctype": "TextObjectData"
-          },
-          {
-            "FontSize": 20,
-            "LabelText": "降った回数",
-            "OutlineColor": {
-              "G": 0,
-              "B": 0
-            },
-            "ShadowColor": {
-              "R": 110,
-              "G": 110,
-              "B": 110
-            },
-            "ShadowOffsetX": 2.0,
-            "ShadowOffsetY": -2.0,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 131.2226,
-              "Y": 209.0674
-            },
-            "Scale": {
-              "ScaleX": 2.5837,
-              "ScaleY": 3.4808
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.205,
-              "Y": 0.2178
-            },
-            "PreSize": {
-              "X": 0.1562,
-              "Y": 0.024
-            },
-            "LeftMargin": 81.2226,
-            "RightMargin": 458.7774,
-            "TopMargin": 739.4326,
-            "BottomMargin": 197.5674,
-            "Tag": 5,
-            "ActionTag": -337840171,
-            "Size": {
-              "X": 100.0,
-              "Y": 23.0
-            },
-            "Name": "shake_count",
-            "ctype": "TextObjectData"
           }
         ],
         "Size": {
-          "X": 640.0,
-          "Y": 960.0
+          "X": 320.0,
+          "Y": 480.0
         },
         "Name": "Layer",
         "ctype": "LayerObjectData"

@@ -36,7 +36,7 @@ var Player = cc.PhysicsSprite.extend({
     var now_pos = this.getPosition();
 	  var distanceDelta = cc.pDistanceSQ(old_pos,now_pos);
     var direction = this.getDirection(distanceDelta);
-    cc.log(direction);
+    
 	  if( this._direction != direction){
 		  this._direction = direction;
 		  //シェイクポイントを貯める

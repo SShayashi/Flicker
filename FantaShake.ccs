@@ -5,6 +5,7 @@
       <RootFolder Name=".">
         <Image Name="HelloWorld.png" />
         <Project Name="StatusLayer.csd" Type="Layer" />
+        <Project Name="StatusLayer-web.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -42,6 +42,7 @@ var MainScene = cc.Scene.extend({
        //書くレイヤーを読み込む
        this.actionlayer = new ActionLayer(this.space);
        this.addChild(this.actionlayer);
+
        this.scheduleUpdate();
    }
 });

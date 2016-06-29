@@ -2,7 +2,7 @@
   <Properties>
     <Item Key="CocosRecentOperation">
       <Value ctype="CocosRecentOperation">
-        <LastPublishType Value="CodeIDE" />
+        <LastPublishType Value="Resource" />
         <IsLastPublish Value="True" />
         <LastRunType Value="Mac" />
       </Value>
@@ -14,23 +14,18 @@
         <LuaEncryptSign Value="" />
         <Android_PackageName Value="org.cocos.FantaShake" />
         <AndroidkeyStore Value="" />
-        <AndroidVersion Value="" />
+        <AndroidVersion Value="android-23" />
         <iOS_Target Value="FantaShake-mobile" />
         <iOS_BundleID Value="iPhone Developer: Masafumi Hayashi (LM7MMMT2DP)" />
-        <Platform Value="None" />
-        <RunPlatform Value="None" />
+        <Platform Value="Android" />
+        <RunPlatform Value="Android" />
         <FrameworkVersion Value="cocos2d-x-3.8.1" />
         <IsDebugKeystore Value="True" />
+        <KeystorePassword Value="" />
+        <KeystoreAliasName Value="" />
+        <KeystoreAliasPassword Value="" />
         <EnableSourceMap Value="False" />
         <EnableHTML5Advanced Value="False" />
-      </Value>
-    </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="StatusLayer.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="StatusLayer.csd" />
       </Value>
     </Item>
   </Properties>
