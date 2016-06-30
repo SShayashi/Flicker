@@ -28,15 +28,36 @@ var StatusLayer = cc.Layer.extend({
 
     model = Model.getInstance();
     this.statusUpdate(model);
+
+    this._configButton.addTouchEventListener(this.onClickConfig,this);
+    this._openButton.addTouchEventListener(this.onClickOpen,this);
+
+  },
+  onClickOpen:function(button,type){
+    if(type == 2){
+      cc.log("button clicked");
+    }
+  },
+  onClickConfig:function(button,type){
+    if(type == 2){
+      
+    }
   },
   statusUpdate:function(model){
+    var size = cc.winSize;
     var coin_count = model.get(model_keys.coin);
     var shake_count = model.get(model_keys.shake_count);
     var shake_count_max = model.get(model_keys.shake_count_max);
 
-    this._coinLabel.setString(cc.formatStr("コイン：%d", coin_count));
-    this._shakeCountLabel.setString(cc.formatStr("降った回数：%d", shake_count));
-    this._shakeCountLabel.setString(cc.formatStr("降った最高回数：%d", shake_count_max));
+    // var str = cc.formatStr("コイン：%d",coin_count);
+    // this._coinLabel.setString(cc.formatStr(coin_count));
+    // var coinLabel = new ccui.Text(str ,"Arial",20);
+    // coinLabel.x = size.width/2;
+    // coinLabel.y = size.height/2;
+
+
+    this._shakeCountLabel.setString(cc.formatStr("振:%d",shake_count));
+    this._shakeCountMaxLabel.setString(cc.formatStr("最高振:%d",shake_count_max));
 
   }
 
