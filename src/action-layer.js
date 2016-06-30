@@ -4,7 +4,8 @@ var ActionLayer = cc.Layer.extend({
   _body:null,
   _shape:null,
   _isTouch:false,
-  _delta:null,
+  _delta:cp.v(0, 0),
+  _state:null,
 
   ctor:function(space) {
     this._super();
