@@ -1,10 +1,12 @@
 var StatusLayer = cc.Layer.extend({
   prop:{
+    configButton:"config",
     openButton:"open",
     coinLabel:"coin",
     shakeCountLabel:"shake_count",
     shakeCountMaxLabel:"shake_count_max",
   },
+  _configButton:null,
   _openButton:null,
   _coinLabel:null,
   _shakeCountLabel:null,
@@ -18,7 +20,7 @@ var StatusLayer = cc.Layer.extend({
     this.init();
   },
   init:function(){
-    var size = cc.winSize;
+    this._configButton = ccui.helper.seekWidgetByName(this,this.prop.configButton);
     this._openButton = ccui.helper.seekWidgetByName(this, this.prop.openButton);
     this._coinLabel = ccui.helper.seekWidgetByName(this, this.prop.coinLabel);
     this._shakeCountLabel = ccui.helper.seekWidgetByName(this, this.prop.shakeCountLabel);
