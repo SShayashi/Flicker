@@ -25,15 +25,12 @@ var ActionLayer = cc.Layer.extend({
     this._player = new Player(this._space);
     this.addChild(this._player);
 
-    this.scheduleUpdate(); // 周期処理を開始
-
     //コールバック関数はbindでthisを束縛する必要がある
     cc.eventManager.addListener({
       event: cc.EventListener.TOUCH_ONE_BY_ONE,
       onTouchBegan: function(touch, event)
       {
         //タッチされた時の処理
-
         var touchPoint = touch.getLocation();
         var rect = this._player.getBoundingBox();
         var isHit = cc.rectContainsPoint(rect, touchPoint);
@@ -43,9 +40,6 @@ var ActionLayer = cc.Layer.extend({
         }else{
           this._isTouch = false;
         }
-
-
-
         return true;
       }.bind(this),
 
@@ -61,6 +55,7 @@ var ActionLayer = cc.Layer.extend({
        this._player.setPosition(cc.pClamp(newPosition, cc.p(0, 0), cc.p(winSize.width, winSize.height)));
        this._delta = cc.pMult(delta,PLAYER_APPLY_IMPULSE_RATE);
 
+      return true;
      }.bind(this),
      onTouchEnded: function(touch,event)
      {
@@ -69,6 +64,8 @@ var ActionLayer = cc.Layer.extend({
     	 this._player.body.applyImpulse(this._delta,cp.v(0, 0));
     	 this._delta = cp.v(0, 0);
     	 this._isTouch = false;
+
+       return true;
      }.bind(this),
      onTouchCancelled:function(touch,event)
      {
@@ -101,8 +98,6 @@ var ActionLayer = cc.Layer.extend({
     		null, // postSolve
     		null); // separate
   },
-
-    // /** @override */
   actionUpdate: function() {
     var position = this._player.getPosition();
     var winSize = cc.director.getWinSize();
