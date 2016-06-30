@@ -36,7 +36,7 @@ var Player = cc.PhysicsSprite.extend({
     var now_pos = this.getPosition();
 	  var distanceDelta = cc.pDistanceSQ(old_pos,now_pos);
     var direction = this.getDirection(distanceDelta);
-    
+
 	  if( this._direction != direction){
 		  this._direction = direction;
 		  //シェイクポイントを貯める
@@ -64,7 +64,7 @@ var Player = cc.PhysicsSprite.extend({
       return this._direction;
 	  var radian = cc.pToAngle( cc.pSub(this._oldPosition ,this.getPosition()));
 	  var degree = radian * 180.0 / PI + 180.0;
-	  var direction = this.get8Way(degree);
+	  var direction = this.get4Way(degree);
     return direction;
   },
   /**
@@ -109,4 +109,32 @@ var Player = cc.PhysicsSprite.extend({
 	  cc.log("uncolect degreee is ",degree );
 	return -1
   },
+
+  /**
+   * 角度から方向の向きを以下の数字で表現
+   *   2
+   *  456
+   *   8
+   */
+  get4Way:function(degree){
+    if(45.0 <= degree && degree <= 135.0) //上 2
+    {
+      return 2;
+    }
+    if(135.0 <= degree && degree <= 225.0) //左 4
+    {
+      return 4;
+    }
+    if(225.0 <= degree && degree <= 315.0) //下 8
+    {
+      return 1;
+    }
+    if(315.0 <= degree || degree <= 45.0) //右 6
+    {
+      return 6;
+    }
+    cc.log("uncolect degreee is ",degree );
+  return -1
+  },
+
 });
