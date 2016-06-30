@@ -36,21 +36,23 @@ var StatusLayer = cc.Layer.extend({
   onClickOpen:function(button,type){
     if(type == 2){
       cc.log("button clicked");
+      cc.eventManager.dispatchCustomEvent("custom","");
     }
   },
   onClickConfig:function(button,type){
     if(type == 2){
-      
+      cc.log("button Config");
     }
   },
   statusUpdate:function(model){
+    // cc.eventManager.dispatchCustomEvent("custom","");
     var size = cc.winSize;
     var coin_count = model.get(model_keys.coin);
     var shake_count = model.get(model_keys.shake_count);
     var shake_count_max = model.get(model_keys.shake_count_max);
 
-    // var str = cc.formatStr("コイン：%d",coin_count);
-    // this._coinLabel.setString(cc.formatStr(coin_count));
+    // var str = cc.formatStr("コイン:%d",coin_count);
+    this._coinLabel.setString(coin_count);
     // var coinLabel = new ccui.Text(str ,"Arial",20);
     // coinLabel.x = size.width/2;
     // coinLabel.y = size.height/2;

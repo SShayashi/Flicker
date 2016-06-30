@@ -25,6 +25,18 @@ var ActionLayer = cc.Layer.extend({
     //playerの設置
     this._player = new Player(this._space);
     this.addChild(this._player);
+    //statusの設定
+    this._state = state.shake;
+
+    var customEvent = cc.EventListener.create({
+    event: cc.EventListener.CUSTOM,
+    eventName:"custom",
+    callback: function(event){
+      //このeventは通知するときに飛ばしたeventが入る
+      this._state = state.open;
+    }.bind(this)
+    });
+    cc.eventManager.addListener(customEvent, 1);
 
     //コールバック関数はbindでthisを束縛する必要がある
     cc.eventManager.addListener({
@@ -83,15 +95,28 @@ var ActionLayer = cc.Layer.extend({
     				var body = shape.getBody(); // ShapeからBodyを取得
     			}
     			model = Model.getInstance();
-    			//値の保存
-    			model.add(model_keys.forse,1);
-          model.add(model_keys.shake_count,1);
     			//エフェクトの表示
-    			var star = new cc.ParticleSystem(res.crash_star);
-    			star.setScale(0.5);
-    			star.setAutoRemoveOnFinish(true);
-    			star.setPosition(body.p);
-    			this.addChild(star)
+          if(this._state == state.shake){
+            //値の保存
+            model.add(model_keys.forse,1);
+            model.add(model_keys.shake_count,1);
+
+      			var star = new cc.ParticleSystem(res.crash_star);
+      			star.setScale(0.5);
+      			star.setAutoRemoveOnFinish(true);
+      			star.setPosition(body.p);
+      			this.addChild(star)
+          }
+          if(this._state == state.open){
+            //値の保存
+            model.add(model_keys.coin,5);
+
+            var coin = new cc.ParticleSystem(res.pop_coin);
+            coin.setScale(0.5);
+            coin.setAutoRemoveOnFinish(true);
+            coin.setPosition(body.p);
+            this.addChild(coin)
+          }
 
     			return true;
     		}.bind(this),  // レイヤーのthisを使えるようにする

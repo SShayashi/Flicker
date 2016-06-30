@@ -19,4 +19,10 @@ var collision = {
 		OBJE:2
 };
 
+var state = {
+  tutorial:"-1",
+  shake:"0",
+  action:"1",
+  result:"2"
+}
 var PI = 3.141592653589793;
