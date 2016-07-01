@@ -50,6 +50,7 @@ var ActionLayer = cc.Layer.extend({
         if (isTouch) {
           this._isTouch = true;
           this._player.body.setVel(cc.p(0,0));
+          this._player.body.w = 0;
         }else{
           this._isTouch = false;
         }
@@ -125,6 +126,7 @@ var ActionLayer = cc.Layer.extend({
     		null); // separate
   },
   actionUpdate: function() {
+
     var position = this._player.getPosition();
     var winSize = cc.director.getWinSize();
     this._player.setPosition(cc.pClamp(position, cc.p(0, 0), cc.p(winSize.width, winSize.height )));
