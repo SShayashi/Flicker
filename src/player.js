@@ -19,12 +19,13 @@ var Player = cc.PhysicsSprite.extend({
     this.initWithFile(res.player);
     var contentSize = this.getContentSize();
     // init body
-    this.body = new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));
+    this.body = new cp.Body(1, cp.momentForBox(100, contentSize.width, contentSize.height));
     this.body.p = cc.p(100, 100);
     this.body.v_limit = 5000;
+
     this.space.addBody(this.body);
 
-    this.shape = new cp.CircleShape(this.body, contentSize.width / 3,cp.v(0, 0));
+    this.shape = new cp.BoxShape(this.body, contentSize.width,contentSize.height );
     this.shape.setElasticity(1);
     this.shape.setFriction(1);
     this.shape.setCollisionType(collision.PLAYER);
@@ -53,10 +54,13 @@ var Player = cc.PhysicsSprite.extend({
 	  }
 	  this._oldPosition =  this.getPosition();
 
+    //速度を減少
     var v = this.body.getVel();
     v.x = v.x * this._accelerationRate;
     v.y = v.y * this._accelerationRate;
     this.body.setVel(v);
+
+    this.body.w = this.body.w * 0.9;
   },
   getDirection:function(distanceDelta){
     //動きが無い場合は前の方向を返す．
