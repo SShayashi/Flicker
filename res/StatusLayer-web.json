@@ -65,7 +65,7 @@
           },
           {
             "FontSize": 20,
-            "LabelText": "コイン",
+            "LabelText": "コイン数",
             "OutlineColor": {
               "G": 0,
               "B": 0
@@ -82,31 +82,31 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 48.5585,
-              "Y": 210.1797
+              "X": 84.7492,
+              "Y": 204.0344
             },
             "Scale": {
-              "ScaleX": 1.3011,
-              "ScaleY": 1.8079
+              "ScaleX": 1.9851,
+              "ScaleY": 1.7457
             },
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.1517,
-              "Y": 0.4379
+              "X": 0.2648,
+              "Y": 0.4251
             },
             "PreSize": {
-              "X": 0.1875,
+              "X": 0.25,
               "Y": 0.0479
             },
-            "LeftMargin": 18.5585,
-            "RightMargin": 241.4415,
-            "TopMargin": 258.3203,
-            "BottomMargin": 198.6797,
+            "LeftMargin": 44.7492,
+            "RightMargin": 195.2508,
+            "TopMargin": 264.4656,
+            "BottomMargin": 192.5344,
             "Tag": 8,
             "ActionTag": 1332469664,
             "Size": {
-              "X": 60.0,
+              "X": 80.0,
               "Y": 23.0
             },
             "Name": "coin",
@@ -206,8 +206,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 51.2385,
-              "Y": 435.8683
+              "X": 50.2364,
+              "Y": 39.8679
             },
             "Scale": {
               "ScaleX": 1.9987,
@@ -216,17 +216,17 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.1601,
-              "Y": 0.9081
+              "X": 0.157,
+              "Y": 0.0831
             },
             "PreSize": {
               "X": 0.1437,
               "Y": 0.075
             },
-            "LeftMargin": 28.2385,
-            "RightMargin": 245.7615,
-            "TopMargin": 26.1317,
-            "BottomMargin": 417.8683,
+            "LeftMargin": 27.2364,
+            "RightMargin": 246.7636,
+            "TopMargin": 422.1321,
+            "BottomMargin": 21.8679,
             "Tag": 10,
             "ActionTag": -1646694475,
             "Size": {
@@ -234,6 +234,81 @@
               "Y": 36.0
             },
             "Name": "open",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 11,
+            "ButtonText": "Config",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Press.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Normal.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 16,
+            "Scale9Height": 14,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 32.2364,
+              "Y": 452.8664
+            },
+            "Scale": {
+              "ScaleX": 1.2161,
+              "ScaleY": 1.1134
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1007,
+              "Y": 0.9435
+            },
+            "PreSize": {
+              "X": 0.1437,
+              "Y": 0.075
+            },
+            "LeftMargin": 9.2364,
+            "RightMargin": 264.7636,
+            "TopMargin": 9.1336,
+            "BottomMargin": 434.8664,
+            "Tag": 6,
+            "ActionTag": -1168382152,
+            "Size": {
+              "X": 46.0,
+              "Y": 36.0
+            },
+            "Name": "config",
             "ctype": "ButtonObjectData"
           }
         ],

@@ -1,6 +1,6 @@
 var res = {
     background :"res/image/background.png",
-    player: "res/image/player.png",
+    player: "res/image/player01.png",
     crash_star:"res/particle/pop_star.plist",
     p_star:"res/particle/star.png",
     pop_coin:"res/particle/pop_coin.plist",

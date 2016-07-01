@@ -17,7 +17,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="coin" ActionTag="1332469664" Tag="8" IconVisible="False" LeftMargin="44.7492" RightMargin="195.2508" TopMargin="264.4656" BottomMargin="192.5344" FontSize="20" LabelText="コイン数" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="coin" ActionTag="1332469664" Tag="8" IconVisible="False" LeftMargin="44.7492" RightMargin="195.2508" TopMargin="264.4656" BottomMargin="192.5344" FontSize="20" LabelText="コイン数" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="80.0000" Y="23.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="84.7492" Y="204.0344" />
