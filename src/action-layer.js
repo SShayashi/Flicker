@@ -3,7 +3,6 @@ var ActionLayer = cc.Layer.extend({
   _space:null,
   _body:null,
   _shape:null,
-  _isTouch:false,
   _delta:cp.v(0, 0),
   _state:null,
 
@@ -48,18 +47,18 @@ var ActionLayer = cc.Layer.extend({
         var rect = this._player.getBoundingBox();
         var isTouch = cc.rectContainsPoint(rect, touchPoint);
         if (isTouch) {
-          this._isTouch = true;
+          this._player._isTouch = true;
           this._player.body.setVel(cc.p(0,0));
           this._player.body.w = 0;
         }else{
-          this._isTouch = false;
+          this._player._isTouch = false;
         }
         return true;
       }.bind(this),
 
       onTouchMoved: function(touch,event)
       {
-        if(this._isTouch == false)
+        if(this._player._isTouch == false)
           return false;
         //タッチ中に動いた時の処理
        var winSize = director.getWinSize();
@@ -73,17 +72,17 @@ var ActionLayer = cc.Layer.extend({
      }.bind(this),
      onTouchEnded: function(touch,event)
      {
-    	 if(this._isTouch == false)
+    	 if(this._player._isTouch == false)
     		 return false;
     	 this._player.body.applyImpulse(this._delta,cp.v(0, 0));
     	 this._delta = cp.v(0, 0);
-    	 this._isTouch = false;
+    	 this._player._isTouch = false;
 
        return true;
      }.bind(this),
      onTouchCancelled:function(touch,event)
      {
-       this._isTouch = false;
+       this._player._isTouch = false;
      }.bind(this),
     },this);
 

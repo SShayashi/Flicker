@@ -4,6 +4,7 @@ var Player = cc.PhysicsSprite.extend({
   _oldPosition:cc.p(100,100),
   _movingDistance:0,
   _direction:5,
+  _isTouch:false,
   ctor:function(space) {
     this._super();
     this.space = space;
@@ -16,7 +17,7 @@ var Player = cc.PhysicsSprite.extend({
     var director = cc.director;
     var winSize = director.getWinSize();
     //playerの設置
-    this.initWithFile(res.player);
+    this.initWithFile(res.player_default);
     var contentSize = this.getContentSize();
     // init body
     this.body = new cp.Body(1, cp.momentForBox(100, contentSize.width, contentSize.height));
@@ -61,6 +62,17 @@ var Player = cc.PhysicsSprite.extend({
     this.body.setVel(v);
 
     this.body.w = this.body.w * 0.9;
+    this.changeSprite();
+  },
+  /** タッチされてる時でSpriteを変更
+   *
+   */
+  changeSprite:function(){
+    if(this._isTouch)
+      this.initWithFile(res.player_touch);
+    else {
+      this.initWithFile(res.player_default);
+    }
   },
   getDirection:function(distanceDelta){
     //動きが無い場合は前の方向を返す．
