@@ -50,8 +50,10 @@ var MainScene = cc.Scene.extend({
        //書くレイヤーを読み込む
        this.actionlayer = new ActionLayer(this.space);
        this.statuslayer = new StatusLayer();
+       this.resultlayer = new ResultLayer();
        this.addChild(this.statuslayer,1000);
        this.addChild(this.actionlayer);
+       this.addChild(this.resultlayer,10001);
 
        this.scheduleUpdate();
    }
