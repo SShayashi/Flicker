@@ -27,21 +27,29 @@ var ActionLayer = cc.Layer.extend({
     //statusの設定
     this._state = state.shake;
 
+    //shake => open用
     var customEvent = cc.EventListener.create({
     event: cc.EventListener.CUSTOM,
     eventName:"custom",
     callback: function(event){
       //このeventは通知するときに飛ばしたeventが入る
       this._state = state.open;
+      model = Model.getInstance();
+      var power = model.get(model_keys.shake_count);
+      this._player.body.applyImpulse(cp.v(power, power),cp.v(0,0));
     }.bind(this)
     });
     cc.eventManager.addListener(customEvent, 1);
 
+    //open =>result用
+    //result => shake用
     //コールバック関数はbindでthisを束縛する必要がある
     cc.eventManager.addListener({
       event: cc.EventListener.TOUCH_ONE_BY_ONE,
       onTouchBegan: function(touch, event)
       {
+        if(this._state != state.shake)
+          return false;
         //タッチされた時の処理
         var touchPoint = touch.getLocation();
         var rect = this._player.getBoundingBox();
@@ -58,6 +66,9 @@ var ActionLayer = cc.Layer.extend({
 
       onTouchMoved: function(touch,event)
       {
+        if(this._state != state.shake)
+          return false;
+
         if(this._player._isTouch == false)
           return false;
         //タッチ中に動いた時の処理
@@ -72,6 +83,9 @@ var ActionLayer = cc.Layer.extend({
      }.bind(this),
      onTouchEnded: function(touch,event)
      {
+       if(this._state != state.shake)
+         return false;
+
     	 if(this._player._isTouch == false)
     		 return false;
     	 this._player.body.applyImpulse(this._delta,cp.v(0, 0));
