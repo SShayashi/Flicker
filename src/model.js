@@ -2,8 +2,7 @@ var model_keys = {
 		shake_count:"shake_count",
 		max_forse:"max_forse",
 		forse:"forse",
-		coin:"coin",
-		point:"point"
+		coin:"coin"
 }
 
 //singleton

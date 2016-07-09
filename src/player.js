@@ -61,7 +61,7 @@ var Player = cc.PhysicsSprite.extend({
     v.y = v.y * this._accelerationRate;
     this.body.setVel(v);
 
-    this.body.w = this.body.w * 0.9;
+    this.body.w = this.body.w * 0.999;
     this.changeSprite();
   },
   /** タッチされてる時でSpriteを変更
